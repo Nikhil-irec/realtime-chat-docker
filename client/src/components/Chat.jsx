@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:5000"); // Replace with your server address
-
+//const socket = io("http://192.168.29.129:5001"); // Replace with your server address
+//const socket = io("http://server:5001");
+const socket = io(import.meta.env.VITE_BACKEND_URL);
 function Chat() {
   const [messages, setMessages] = useState([]);
   const [messageInput, setMessageInput] = useState("");
